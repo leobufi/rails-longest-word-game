@@ -1,0 +1,8 @@
+<h1>New Game</h1>
+<%= @letters.each { |letter| print letter } %>
+<form method="post" action="/score">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @letters %>
+  <input type="text" name="word">
+  <input type="submit" value="play">
+</form>
